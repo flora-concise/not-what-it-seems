@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+<style>
+	body {
+		background-color: black;
+		margin: 0;
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	.center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	article {
+		width: 50vmin;
+		height: 50vmin;
+		background-color: rgba(255,255,255,0.45);
+		border-radius: 25vmin;
+	}
+
+	div {
+		outline: 0.75vmin solid rgba(255,255,255,0.5);
+		position: absolute;
+		animation-duration: 6s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function: linear;
+	}
+
+	div.vert {
+		height: 100vh;
+		top: 0;
+		animation-name: move-horiz;
+	}
+
+	@keyframes move-horiz {
+		0% {
+			left: calc(50vw + 25vmin);
+		}
+		5.333% {
+			left: calc(50vw + 24.65vmin);
+		}
+		11% {
+			left: calc(50vw + 23.52vmin);
+		}
+		16.67% {
+			left: calc(50vw + 21.65vmin);
+		}
+		25% {
+			left: calc(50vw + 17.68vmin);
+		}
+		33.33% {
+			left: calc(50vw + 12.5vmin);
+		}
+		39% {
+			left: calc(50vw + 8.47vmin);
+		}	
+		44% {
+			left: calc(50vw + 4.685vmin);
+		}
+		50% {
+			left: 50vw;
+		}
+		56% {
+			left: calc(50vw - 4.685vmin);
+		}
+		61% {
+			left: calc(50vw - 8.47vmin);
+		}	
+		66.67% {
+			left: calc(50vw - 12.5vmin);
+		}
+		75% {
+			left: calc(50vw - 17.68vmin);
+		}
+		83.33% {
+			left: calc(50vw - 21.65vmin);
+		}
+		89% {
+			left: calc(50vw - 23.52vmin);
+		}
+		94.67% {
+			left: calc(50vw - 24.65vmin);
+		}
+		100% {
+			left: calc(50vw - 25vmin);
+		}
+	}
+
+	div.horiz {
+		width: 100vw;
+		left: 0;
+		top: calc(50vh - 25vmin);
+	animation-name: move-vert;
+	animation-delay: 3s;
+	}
+
+	@keyframes move-vert {
+		0% {
+			top: calc(50vh - 25vmin);
+		}
+		5.333% {
+			top: calc(50vh - 24.65vmin);
+		}
+		11% {
+			top: calc(50vh - 23.52vmin);
+		}
+		16.67% {
+			top: calc(50vh - 21.65vmin);
+		}
+		25% {
+			top: calc(50vh - 17.68vmin);
+		}
+		33.33% {
+			top: calc(50vh - 12.5vmin);
+		}
+		39% {
+			top: calc(50vh - 8.47vmin);
+		}	
+		44% {
+			top: calc(50vh - 4.685vmin);
+		}
+		50% {
+			top: 50vh;
+		}
+		56% {
+			top: calc(50vh + 4.685vmin);
+		}
+		61% {
+			top: calc(50vh + 8.47vmin);
+		}	
+		66.67% {
+			top: calc(50vh + 12.5vmin);
+		}
+		75% {
+			top: calc(50vh + 17.68vmin);
+		}
+		83.33% {
+			top: calc(50vh + 21.65vmin);
+		}
+		89% {
+			top: calc(50vh + 23.52vmin);
+		}
+		94.67% {
+			top: calc(50vh + 24.65vmin);
+		}
+		100% {
+			top: calc(50vh + 25vmin);
+		}
+	}
+	
+	div.bar {
+		width: 48.5vmin;
+		top: 50vh;
+		outline-color: rgba(0,0,0,0);
+		animation-direction: normal;
+		animation-duration: 24s;
+		animation-delay: 6s;
+	}
+	
+	.one {
+		animation-name: rotation-1;
+	}
+	
+	@keyframes rotation-1 {
+		from {outline-color: rgba(0,0,0,0);}
+		50% {outline-color: rgba(0,0,0,0); transform: rotate(0deg);}
+		75% {outline-color: rgba(255,255,255,0.6);}
+		to {outline-color: rgba(0,0,0,0); transform: rotate(-360deg);}
+	}
+
+	.two {
+		animation-name: rotation-2;
+	}
+	
+	@keyframes rotation-2 {
+		from {outline-color: rgba(0,0,0,0);}
+		25% {outline-color: rgba(255,255,255,0.6);}
+		50% {transform: rotate(360deg); outline-color: rgba(0,0,0,0);}
+		to {outline-color: rgba(0,0,0,0);}
+	}
+	
+</style>
+</head>
+
+<body class="center">
+<article class="center">
+	<div class="vert"></div>
+	<div class="horiz"></div>
+	<div class="bar one"></div>
+	<div class="bar two"></div>
+</article>
+</body>
+</html>
